@@ -18,7 +18,7 @@ public class playe_Script : MonoBehaviour
     [SerializeField] private Animator anim;
     private SpriteRenderer spr;
 
-    [SerializeField] GameObject ding;
+    [SerializeField] AudioSource ding;
     [SerializeField] AudioSource jump_sfx;
     [SerializeField] AudioSource walk_sfx;
     [SerializeField] AudioSource hurt_sfx;
@@ -33,7 +33,7 @@ public class playe_Script : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        spr = anim.gameObject.GetComponent<SpriteRenderer>();
+        spr = anim.gameObject.GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -71,8 +71,9 @@ public class playe_Script : MonoBehaviour
 
 
             score_txt.text = $"{score}";
-        
-
+            
+            
+        /*
         if (CanOpenCasino && !CasinoIsOpen)
         {
             casino.GetComponent<Casino>().press_E.gameObject.SetActive(true);
@@ -107,6 +108,7 @@ public class playe_Script : MonoBehaviour
                 
             }
         }
+        */
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -137,6 +139,7 @@ public class playe_Script : MonoBehaviour
             Instantiate(ding);
             Destroy(collision.gameObject);
         }
+        /*
         else if (collision.gameObject.CompareTag("CheckPoint"))
         {
             spawnPoint.position = collision.transform.position;
@@ -147,8 +150,10 @@ public class playe_Script : MonoBehaviour
         {
             CanOpenCasino = true;
         }
+        */
     }
 
+    /*
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Casino"))
@@ -163,4 +168,5 @@ public class playe_Script : MonoBehaviour
         hurt_sfx.Play();
         trail.SetActive(false);
     }
+    */
 }

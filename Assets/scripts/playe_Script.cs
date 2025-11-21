@@ -139,13 +139,13 @@ public class playe_Script : MonoBehaviour
             ding.Play();
             Destroy(collision.gameObject);
         }
-        /*
         else if (collision.gameObject.CompareTag("CheckPoint"))
         {
-            spawnPoint.position = collision.transform.position;
+            spawnPoint = collision.transform;
             checkPoint_Sfx.Play();
-            //collision.GetComponent<CheckPoint>().ShowText();
+            collision.GetComponent<CheckPoint>().ShowText();
         }
+        /*
         else if (collision.gameObject.CompareTag("Casino"))
         {
             CanOpenCasino = true;
@@ -161,12 +161,11 @@ public class playe_Script : MonoBehaviour
             CanOpenCasino = false;
         }
     }
-
+    */
     public void Reset()
     {
         transform.position = spawnPoint.position;
         hurt_sfx.Play();
         trail.SetActive(false);
     }
-    */
 }

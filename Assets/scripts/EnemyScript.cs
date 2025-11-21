@@ -50,7 +50,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<playe_Script>().Reset();
+            collision.gameObject.GetComponent<playe_Script>().ChangeHealth(1);
             Destroy(this.gameObject);
         }
     }

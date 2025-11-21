@@ -5,11 +5,14 @@ using UnityEngine;
 public class playe_Script : MonoBehaviour
 {
 
+    public int health;
+    public int max_health;
     private Rigidbody2D rb;
     [SerializeField] float speed;
     [SerializeField] float jumpPower;
     private bool canJump = false;
 
+    public Transform startPoint;
     public Transform spawnPoint;
 
     [SerializeField] private TextMeshProUGUI score_txt;
@@ -34,6 +37,8 @@ public class playe_Script : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spr = anim.gameObject.GetComponentInChildren<SpriteRenderer>();
+        health = max_health;
+        spawnPoint = startPoint;
     }
 
     // Update is called once per frame
@@ -165,7 +170,19 @@ public class playe_Script : MonoBehaviour
     public void Reset()
     {
         transform.position = spawnPoint.position;
-        hurt_sfx.Play();
         trail.SetActive(false);
+    }
+
+    public void Restart()
+    {
+        if(health <= 0) health = max_health;
+        transform.position = startPoint.position;
+    }
+
+    public void ChangeHealth(int amount)
+    {
+        hurt_sfx.Play();
+        health -= amount;
+        if(health <=0) Restart();
     }
 }

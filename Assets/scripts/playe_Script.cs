@@ -136,7 +136,7 @@ public class playe_Script : MonoBehaviour
         if (collision.gameObject.CompareTag("Coin"))
         {
             score++;
-            Instantiate(ding);
+            ding.Play();
             Destroy(collision.gameObject);
         }
         /*

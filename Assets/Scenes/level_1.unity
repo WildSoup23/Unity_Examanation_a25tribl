@@ -8162,6 +8162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pop_up: {fileID: 0}
+  isWin: 0
 --- !u!1001 &2117959410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8709,6 +8710,10 @@ PrefabInstance:
       propertyPath: timer_txt
       value: 
       objectReference: {fileID: 582335458}
+    - target: {fileID: 7176522189626776931, guid: d5e9de20b11ab0b4083efc9dd5a08ece, type: 3}
+      propertyPath: winScreen
+      value: 
+      objectReference: {fileID: 1602982125}
     - target: {fileID: 7176522189626776931, guid: d5e9de20b11ab0b4083efc9dd5a08ece, type: 3}
       propertyPath: spawnPoint
       value: 
